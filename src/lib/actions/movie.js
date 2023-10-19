@@ -3,9 +3,12 @@ export const revalidate = 0;
 
 export const fetchAllMovies = async () => {
   try {
-    const res = await fetch("https://stream-for-ruman.vercel.app/api/movies", {
+    const res = await fetch("https://stream-api-v3.vercel.app/api/movies", {
       method: "GET",
-      cache: "no-store",
+      cache: 'no-store',
+      headers: {
+        "Content-type": "application/json",
+      },
     });
     return res.json();
   } catch (error) {
@@ -15,8 +18,12 @@ export const fetchAllMovies = async () => {
 
 export const getMovie = async (slug) => {
   try {
-    const res = await fetch(`https://stream-for-ruman.vercel.app/movies/${slug}`, {
+    const res = await fetch(`https://stream-api-v3.vercel.app/api/movies/${slug}`, {
       method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+      cache: 'no-store',
     });
     return res.json();
   } catch (error) {
@@ -38,7 +45,7 @@ export const createMovie = async ({
   plot
 }) => {
   try {
-    const res = await fetch("https://stream-for-ruman.vercel.app/api/create", {
+    const res = await fetch("https://stream-api-v3.vercel.app/api/create", {
       method: 'POST',
       headers: {
         "Content-type": "application/json",
@@ -66,7 +73,7 @@ export const createMovie = async ({
 
 export const likeMovie = async (slug) => {
   try {
-    const res = await fetch(`https://stream-for-ruman.vercel.app/api/like/${slug}`,{
+    const res = await fetch(`https://stream-api-v3.vercel.app/api/like/${slug}`,{
       method: 'PUT'
     })
     return res.json()

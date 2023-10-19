@@ -2,6 +2,9 @@ import { getMovie, likeMovie } from "@/lib/actions/movie";
 import Image from "next/image";
 
 export default async function Page({ params }) {
+
+
+
   const movie = await getMovie(params.slug);
 
 
@@ -66,12 +69,5 @@ export default async function Page({ params }) {
   );
 }
 
-{
-  /* <iframe
-          className="h-[90%] w-[80%] rounded-md shadow-xl"
-          src={movie.embedUrl}
-          title="Abhishek Upmanyu - Jealous of Sabziwala (FULL SPECIAL)"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe> */
-}
+
+export const revalidate = 0
