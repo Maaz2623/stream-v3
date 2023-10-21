@@ -25,6 +25,7 @@ export default async function Page({ params }) {
           width={1200}
           src={movie.embedUrl}
           loading="eager"
+          allowFullScreen
         ></iframe>
       </div>
       <div className="bg-black text-white p-10 mx-10 my-5 flex gap-10 rounded-lg">
