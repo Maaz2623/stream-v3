@@ -1,6 +1,3 @@
-
-export const revalidate = 0;
-
 export const fetchAllMovies = async () => {
   try {
     const res = await fetch(`${process.env.URL}/api/movies`, {
@@ -70,14 +67,4 @@ export const createMovie = async ({
   }
 };
 
-
-export const likeMovie = async (slug) => {
-  try {
-    const res = await fetch(`${process.env.URL}/api/like/${slug}`,{
-      method: 'PUT'
-    })
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
-}
+export const revalidate = 0;
