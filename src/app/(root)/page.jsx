@@ -25,7 +25,7 @@ export default async function Page() {
                 <Link
                   key={movie.id}
                   href={`/movie/${movie.slug}`}
-                  className="h-auto overflow-hidden w-[230px] shadow-sm"
+                  className="h-auto overflow-hidden w-[230px] shadow-sm mt-2"
                 >
                   <div>
                     <img
